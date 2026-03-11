@@ -1,0 +1,39 @@
+<svg width="980" height="1080" viewBox="0 0 980 1080" xmlns="http://www.w3.org/2000/svg">
+  <rect width="980" height="1080" rx="42" fill="#F5FBF8"/>
+  <path d="M240 170 C160 310 180 470 280 590 C375 700 520 760 670 870" fill="none" stroke="#DCEFE6" stroke-width="86" stroke-linecap="round"/>
+  <g transform="translate(132 86)">
+    <circle cx="114" cy="114" r="98" fill="#FFF3E8"/>
+    <circle cx="114" cy="88" r="36" fill="#F6C98A"/>
+    <rect x="72" y="120" width="82" height="102" rx="36" fill="#7FB8AD"/>
+    <rect x="37" y="135" width="48" height="24" rx="12" fill="#7FB8AD"/>
+    <rect x="143" y="135" width="48" height="24" rx="12" fill="#7FB8AD"/>
+    <rect x="66" y="204" width="32" height="76" rx="16" fill="#EB8E72"/>
+    <rect x="132" y="204" width="32" height="76" rx="16" fill="#EB8E72"/>
+    <text x="236" y="108" font-family="Arial" font-size="34" font-weight="700" fill="#17324D">Sits &amp; pivots</text>
+    <text x="236" y="150" font-family="Arial" font-size="22" fill="#4D6277">steady trunk control for play</text>
+  </g>
+  <g transform="translate(262 382)">
+    <circle cx="114" cy="114" r="98" fill="#E8F4FB"/>
+    <circle cx="114" cy="82" r="36" fill="#F6C98A"/>
+    <rect x="72" y="116" width="82" height="108" rx="36" fill="#EB8E72"/>
+    <rect x="45" y="136" width="42" height="22" rx="11" fill="#EB8E72"/>
+    <rect x="149" y="132" width="72" height="22" rx="11" fill="#EB8E72"/>
+    <rect x="68" y="210" width="28" height="94" rx="14" fill="#7FB8AD"/>
+    <rect x="136" y="210" width="28" height="94" rx="14" fill="#7FB8AD"/>
+    <rect x="202" y="116" width="28" height="186" rx="8" fill="#C9A56A"/>
+    <text x="256" y="102" font-family="Arial" font-size="34" font-weight="700" fill="#17324D">Pulls to stand</text>
+    <text x="256" y="144" font-family="Arial" font-size="22" fill="#4D6277">uses support to get vertical</text>
+  </g>
+  <g transform="translate(474 724)">
+    <circle cx="114" cy="114" r="98" fill="#FFF0D9"/>
+    <circle cx="114" cy="82" r="36" fill="#F6C98A"/>
+    <rect x="74" y="116" width="82" height="106" rx="36" fill="#7FB8AD"/>
+    <rect x="46" y="136" width="74" height="22" rx="11" fill="#7FB8AD"/>
+    <rect x="145" y="136" width="64" height="22" rx="11" fill="#7FB8AD"/>
+    <rect x="66" y="206" width="28" height="98" rx="14" fill="#EB8E72" transform="rotate(7 80 255)"/>
+    <rect x="138" y="206" width="28" height="98" rx="14" fill="#EB8E72" transform="rotate(-6 152 255)"/>
+    <rect x="204" y="116" width="28" height="186" rx="8" fill="#C9A56A"/>
+    <text x="256" y="102" font-family="Arial" font-size="34" font-weight="700" fill="#17324D">Cruises &amp; explores</text>
+    <text x="256" y="144" font-family="Arial" font-size="22" fill="#4D6277">traveling sideways with support</text>
+  </g>
+</svg>

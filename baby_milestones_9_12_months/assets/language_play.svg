@@ -1,0 +1,27 @@
+<svg width="760" height="760" viewBox="0 0 760 760" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="760" rx="40" fill="#FFFDF8"/>
+  <circle cx="380" cy="382" r="144" fill="#F8D9D3"/>
+  <circle cx="380" cy="320" r="78" fill="#F6C98A"/>
+  <rect x="308" y="390" width="144" height="178" rx="58" fill="#7FB8AD"/>
+  <rect x="248" y="416" width="72" height="32" rx="16" fill="#7FB8AD"/>
+  <rect x="440" y="416" width="72" height="32" rx="16" fill="#7FB8AD"/>
+  <rect x="322" y="548" width="46" height="112" rx="22" fill="#EB8E72"/>
+  <rect x="392" y="548" width="46" height="112" rx="22" fill="#EB8E72"/>
+  <path d="M248 210 C214 172 198 126 202 92 C254 100 288 125 306 165" fill="#DCEFE6"/>
+  <path d="M508 210 C542 172 558 126 554 92 C502 100 468 125 450 165" fill="#DCEFE6"/>
+  <g transform="translate(110 122)">
+    <path d="M0 36 C0 16 16 0 36 0 H126 C146 0 162 16 162 36 V72 C162 92 146 108 126 108 H74 L34 138 L44 108 H36 C16 108 0 92 0 72 Z" fill="#E8F4FB"/>
+    <text x="28" y="46" font-family="Arial" font-size="22" font-weight="700" fill="#17324D">ba-ba</text>
+    <text x="28" y="76" font-family="Arial" font-size="18" fill="#4D6277">imitates sound</text>
+  </g>
+  <g transform="translate(474 166)">
+    <path d="M0 36 C0 16 16 0 36 0 H126 C146 0 162 16 162 36 V72 C162 92 146 108 126 108 H36 C16 108 0 92 0 72 Z" fill="#FFF0D9"/>
+    <text x="40" y="48" font-family="Arial" font-size="22" font-weight="700" fill="#17324D">wave</text>
+    <text x="40" y="78" font-family="Arial" font-size="18" fill="#4D6277">uses gestures</text>
+  </g>
+  <g transform="translate(462 530)">
+    <circle cx="72" cy="72" r="72" fill="#DCEFE6"/>
+    <text x="26" y="66" font-family="Arial" font-size="20" font-weight="700" fill="#17324D">peek</text>
+    <text x="20" y="94" font-family="Arial" font-size="18" fill="#4D6277">back-and-forth</text>
+  </g>
+</svg>

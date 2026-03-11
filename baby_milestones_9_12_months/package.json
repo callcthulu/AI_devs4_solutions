@@ -1,0 +1,14 @@
+{
+  "name": "baby-milestones-9-12-months",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three-slide PPTX about important baby milestones between 9 and 12 months.",
+  "main": "baby_milestones_9_12_months.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node baby_milestones_9_12_months.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}
