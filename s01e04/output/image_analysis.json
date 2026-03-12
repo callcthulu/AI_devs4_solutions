@@ -1,0 +1,104 @@
+[
+  {
+    "file": "trasy-wylaczone.png",
+    "path": "C:\\Users\\Oskar\\Documents\\AI_dev4\\AI_devs4_solutions\\s01e04\\assets\\trasy-wylaczone.png",
+    "analysis": {
+      "summary": "Tabela przedstawia listę ośmiu tras Systemu Przesyłek Konduktorskich wraz z ich przebiegiem, powodami wyłączenia, datami wyłączenia oraz prognozami reaktywacji. Cztery trasy (X-01 do X-04) są wyłączone z powodu 'NIEJAWNY (Dyrektywa Specjalna 7.7)'. Dwie trasy (X-06, X-07) są wyłączone ze względu na 'Strefę buforową'. Pozostałe wyłączenia dotyczą zniszczenia mostu (X-05) i osunięcia terenu (X-08). Większość wyłączeń nastąpiła w 'Roku Systemu 0' lub 'Roku Systemu 1', a prognozy reaktywacji są w większości 'BRAK' lub 'Nieokreślona', z wyjątkiem trasy X-01 (oczekuje na testy) i X-05 (planowana reaktywacja w Roku Systemu 16).",
+      "extracted_text": "Kod trasy | Przebieg | Powód wyłączenia | Data wyłączenia | Prognoza reaktywacji\nX-01 | Gdańsk - Żarnowiec | NIEJAWNY (Dyrektywa Specjalna 7.7) | Rok Systemu 0 | (oczekuje na testy - 80 km trasy)\nX-02 | Wejherowo - Żarnowiec (odgałęzienie) | NIEJAWNY (Dyrektywa Specjalna 7.7) | Rok Systemu 0 | BRAK\nX-03 | Lębork - Żarnowiec (odgałęzienie pomocnicze) | NIEJAWNY (Dyrektywa Specjalna 7.7) | Rok Systemu 0 | BRAK\nX-04 | Krokowa - Żarnowiec (szlak techniczny) | NIEJAWNY (Dyrektywa Specjalna 7.7) | Rok Systemu 0 | BRAK\nX-05 | Legnica - Jawor | Zniszczenie mostu na Kaczawie | Rok Systemu 1 | Rok Systemu 16 (planowany)\nX-06 | Przemyśl - granica wschodnia | Strefa buforowa | Rok Systemu 0 | BRAK\nX-07 | Szczecin - granica zachodnia | Strefa buforowa | Rok Systemu 0 | BRAK\nX-08 | Tarnów - Nowy Sącz | Osunięcie terenu | Rok Systemu 4 | Nieokreślona",
+      "route_codes": [
+        "X-01",
+        "X-02",
+        "X-03",
+        "X-04",
+        "X-05",
+        "X-06",
+        "X-07",
+        "X-08"
+      ],
+      "restrictions": [
+        {
+          "route_code": "X-01",
+          "course": "Gdańsk - Żarnowiec",
+          "reason": "NIEJAWNY (Dyrektywa Specjalna 7.7)",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-02",
+          "course": "Wejherowo - Żarnowiec (odgałęzienie)",
+          "reason": "NIEJAWNY (Dyrektywa Specjalna 7.7)",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-03",
+          "course": "Lębork - Żarnowiec (odgałęzienie pomocnicze)",
+          "reason": "NIEJAWNY (Dyrektywa Specjalna 7.7)",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-04",
+          "course": "Krokowa - Żarnowiec (szlak techniczny)",
+          "reason": "NIEJAWNY (Dyrektywa Specjalna 7.7)",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-05",
+          "course": "Legnica - Jawor",
+          "reason": "Zniszczenie mostu na Kaczawie",
+          "exclusion_date": "Rok Systemu 1"
+        },
+        {
+          "route_code": "X-06",
+          "course": "Przemyśl - granica wschodnia",
+          "reason": "Strefa buforowa",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-07",
+          "course": "Szczecin - granica zachodnia",
+          "reason": "Strefa buforowa",
+          "exclusion_date": "Rok Systemu 0"
+        },
+        {
+          "route_code": "X-08",
+          "course": "Tarnów - Nowy Sącz",
+          "reason": "Osunięcie terenu",
+          "exclusion_date": "Rok Systemu 4"
+        }
+      ],
+      "notes_for_declaration": [
+        {
+          "route_code": "X-01",
+          "reactivation_forecast": "(oczekuje na testy - 80 km trasy)"
+        },
+        {
+          "route_code": "X-02",
+          "reactivation_forecast": "BRAK"
+        },
+        {
+          "route_code": "X-03",
+          "reactivation_forecast": "BRAK"
+        },
+        {
+          "route_code": "X-04",
+          "reactivation_forecast": "BRAK"
+        },
+        {
+          "route_code": "X-05",
+          "reactivation_forecast": "Rok Systemu 16 (planowany)"
+        },
+        {
+          "route_code": "X-06",
+          "reactivation_forecast": "BRAK"
+        },
+        {
+          "route_code": "X-07",
+          "reactivation_forecast": "BRAK"
+        },
+        {
+          "route_code": "X-08",
+          "reactivation_forecast": "Nieokreślona"
+        }
+      ]
+    }
+  }
+]

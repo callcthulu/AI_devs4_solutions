@@ -274,7 +274,7 @@ function addSlideTwo() {
 
   slide.addImage({
     path: asset("motor_path.svg"),
-    ...imageSizingContain(asset("motor_path.svg"), 0.7, 2.02, 4.15, 4.38),
+    ...imageSizingContain(asset("motor_path.svg"), 0.6, 2.05, 4.55, 4.15),
   });
 
   addSkillCard(

@@ -1,5 +1,5 @@
-<svg width="980" height="1080" viewBox="0 0 980 1080" xmlns="http://www.w3.org/2000/svg">
-  <rect width="980" height="1080" rx="42" fill="#F5FBF8"/>
+<svg width="1280" height="1080" viewBox="0 0 1280 1080" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="1080" rx="42" fill="#F5FBF8"/>
   <path d="M240 170 C160 310 180 470 280 590 C375 700 520 760 670 870" fill="none" stroke="#DCEFE6" stroke-width="86" stroke-linecap="round"/>
   <g transform="translate(132 86)">
     <circle cx="114" cy="114" r="98" fill="#FFF3E8"/>
@@ -24,7 +24,7 @@
     <text x="256" y="102" font-family="Arial" font-size="34" font-weight="700" fill="#17324D">Pulls to stand</text>
     <text x="256" y="144" font-family="Arial" font-size="22" fill="#4D6277">uses support to get vertical</text>
   </g>
-  <g transform="translate(474 724)">
+  <g transform="translate(438 724)">
     <circle cx="114" cy="114" r="98" fill="#FFF0D9"/>
     <circle cx="114" cy="82" r="36" fill="#F6C98A"/>
     <rect x="74" y="116" width="82" height="106" rx="36" fill="#7FB8AD"/>

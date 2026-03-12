@@ -1,0 +1,28 @@
+{
+  "h2_first_letters": "DS123456789111",
+  "h3_first_letters": "W1111222333444555666667777788888999991111111111ZZZZZZZZZ",
+  "h4_first_letters": "333",
+  "toc_titles_first_letters": "[[[[[[[[[[[[******OMMPMSW******ZFDMTSSCPNSNPSWRSBCSRDPSSPAAAWPUPSWUPZWRW****",
+  "removed_markers": [
+    {
+      "line": 76,
+      "text": "| **Trasa wyłączona** | Odcinek torów oficjalnie wycofany z eksploatacji decyzją Systemu |"
+    },
+    {
+      "line": 775,
+      "text": "-wycofane-"
+    }
+  ],
+  "annex_headers": [
+    "Trasy lokalne obsługują połączenia do mniejszych punktów nadawczych. Ze względu na ich liczbę (ponad 90 aktywnych tras), poniżej przedstawiono jedynie wybrane przykłady. Pełna lista dostępna jest w Załączniku A (wymagany dostęp poziom ŻÓŁTY).",
+    "### Załącznik A - Pełna lista tras lokalnych",
+    "### Załącznik B - Schematy techniczne automatów kontrolnych",
+    "### Załącznik C - Pojazdy szynowe kategorii P",
+    "### Załącznik D - Kody błędów terminala",
+    "### Załącznik E - Wzór deklaracji zawartości",
+    "### Załącznik F - Mapa sieci (uproszczona)",
+    "### Załącznik G - Słownik skrótów",
+    "### Załącznik H - Historia zmian dokumentacji",
+    "### Załącznik I - system flag używanych w sygnalizacji ręcznej"
+  ]
+}

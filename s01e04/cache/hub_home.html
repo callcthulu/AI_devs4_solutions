@@ -1,0 +1,1098 @@
+<!doctype html>
+<html><head><title>Centrala AI Devs</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="/i/icon.png?v=3" rel="shortcut icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.3.67/css/materialdesignicons.min.css');
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-surface: #161616;
+  --border: #3a3a3a;
+  --border-strong: #4a4a4a;
+  --text-primary: #ffffff;
+  --text-muted: #888888;
+  --accent: #75f86f;
+  --accent-dim: rgba(117, 248, 111, 0.12);
+  --error: #ff8080;
+  --warning: #f78c6c;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  font-family: 'Lexend Deca', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg-primary);
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hub-wrap {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-stage {
+  width: min(90vw, 840px);
+  max-width: 90vw;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0;
+  background-color: #161616;
+  background-image: url('/i/Desert.jpg?v=2026031218');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 4px 0;
+}
+
+h2 {
+  width: 100%;
+  margin: 32px 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+p { margin: 0.5rem 0; color: rgba(255,255,255,0.92); }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+table td, table th {
+  padding: 10px 12px;
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table tr:first-child td, table tr:first-child th { border-top: 0; }
+table td:last-child, table th:last-child { border-right: 0; }
+
+.hub-logo {
+  display: block;
+  height: 32px;
+  margin-top: 12px;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+#flagOut:empty {
+  display: none;
+}
+
+#flagOut {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+#flagOut.text-red-500 {
+  background: rgba(255, 100, 100, 0.08);
+  border: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+#flagOut.text-green-500 {
+  background: var(--accent-dim);
+  border: 1px solid rgba(117, 248, 111, 0.2);
+}
+
+#score { margin-top: 4px; margin-bottom: 8px; }
+#score td {
+  border-right: none;
+  vertical-align: middle;
+  padding: 14px 16px;
+}
+#score tr:first-child td:first-child {
+  width: 100%;
+}
+#score tr:first-child td:nth-child(2),
+#score tr:first-child td:nth-child(4) {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+#score tr:first-child td:nth-child(3),
+#score tr:first-child td:nth-child(5) {
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+}
+#score h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  line-height: 1.3;
+}
+#score h1 + p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+#azylResetWrap {
+  margin-left: auto;
+}
+
+#azylResetWrap a {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 90ms ease;
+}
+
+#azylResetWrap a:hover {
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#azylResetWrap a:focus,
+#azylResetWrap a:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(117, 248, 111, 0.12);
+}
+
+#azylResetWrap a:active {
+  transform: translateY(1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--accent);
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.score-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+@keyframes customPulse { 50% { opacity: .5; } }
+.pulse { animation: customPulse 2s infinite; }
+
+#score.awesome { border-color: var(--accent); box-shadow: 0 0 40px rgba(117, 248, 111, 0.18); }
+
+form {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.form-danger { border-color: rgba(255,128,128,0.65); }
+
+.form-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+input[type="text"], input[type="email"] {
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+}
+
+.hub-input,
+.hub-submit {
+  min-height: 48px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease,
+    color 140ms ease,
+    transform 90ms ease;
+}
+
+.hub-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 12px 16px;
+  background: rgba(10, 10, 10, 0.92);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.4;
+  outline: none;
+  appearance: none;
+}
+
+.hub-input::placeholder {
+  color: var(--text-muted);
+}
+
+.hub-input:hover {
+  border-color: var(--border-strong);
+  background: rgba(18, 18, 18, 0.96);
+}
+
+.hub-input:focus,
+.hub-input:focus-visible {
+  border-color: var(--accent);
+  background:
+    linear-gradient(135deg, var(--accent-dim), rgba(10, 10, 10, 0.96));
+  box-shadow: 0 0 0 3px rgba(117, 248, 111, 0.12);
+}
+
+.hub-input:active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(117, 248, 111, 0.10);
+}
+
+.hub-submit {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.hub-submit:hover {
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hub-submit:focus,
+.hub-submit:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(117, 248, 111, 0.12);
+}
+
+.hub-submit:active {
+  transform: translateY(1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--accent);
+}
+
+table#mission {
+  display: block;
+  width: min(100%, 700px);
+  max-width: 700px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  margin: 0 auto;
+}
+
+table#mission tbody {
+  display: block;
+}
+
+table#mission tr {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table#mission td {
+  display: block;
+  flex: 1 1 20%;
+  max-width: 140px;
+  padding: 0 !important;
+  aspect-ratio: 1 / 1;
+  line-height: 0;
+  font-size: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 0 !important;
+  border-right: 1px solid rgba(140, 140, 140, 0.35) !important;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.35) !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+table#mission td .day-check {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+table#mission tr td:last-child {
+  border-right: 0 !important;
+}
+
+table#mission tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  table#mission td {
+    height: min(18vw, 140px);
+  }
+}
+
+ol li { color: var(--text-muted); margin: 8px 0; }
+
+#secretsTable { margin-bottom: 0; }
+
+#secretsTable th {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-align: left;
+  font-weight: 500;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-strong);
+  border-right: none;
+}
+
+#secretsTable th:last-child {
+  text-align: right;
+}
+
+#secretsTable td {
+  border-right: none;
+  vertical-align: middle;
+  padding: 12px 16px;
+}
+
+#secretsTable .sec-check {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  flex-shrink: 0;
+}
+
+#secretsTable tr.secret-found .sec-check {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+#secretsTable tr.secret-found .sec-check::after {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 11px;
+  color: #0a0a0a;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  font-weight: 700;
+}
+
+#secretsTable .sec-desc {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+#secretsTable .sec-loc {
+  text-align: right;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#secretsTable .sec-pill {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+#secretsTable tbody tr {
+  transition: background 140ms ease;
+}
+
+#secretsTable tbody tr:hover {
+  background: inherit;
+}
+
+#secretsTable tr.secret-found {
+  background: linear-gradient(135deg, var(--accent-dim), rgba(10, 10, 10, 0.96));
+}
+
+#secretsTable tr.secret-found:hover {
+  background: linear-gradient(135deg, var(--accent-dim), rgba(10, 10, 10, 0.96));
+}
+
+#secretsTable tr.secret-found .sec-pill {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#secretsTable tr.secret-found .sec-desc {
+  color: var(--text-primary);
+}
+
+.apikey,
+#azyluser,
+.secretflag {
+  filter: blur(7px);
+  opacity: 0.88;
+  transition:
+    filter 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease,
+    text-shadow 0.2s ease;
+  will-change: filter, opacity;
+}
+
+.apikey:hover,
+.apikey:focus-visible,
+#azyluser:hover,
+.secretflag:hover {
+  filter: blur(0);
+  opacity: 1;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+.apikey,
+#azyluser { cursor: pointer; user-select: none; }
+.apikey-copy {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  outline: none;
+}
+.apikey-copy:hover { text-decoration: none; }
+
+/* Remove default focus outlines from glitch-reveal elements */
+#apikeyCopy:focus,
+#apikeyCopy:focus-visible,
+#azyluser:focus,
+#azyluser:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Center toast (no layout shifts) */
+#toast {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+#toast.show { opacity: 1; }
+#toast .toast-box {
+  pointer-events: none;
+  background: rgba(22, 22, 22, 0.96);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  max-width: min(520px, 90vw);
+  text-align: center;
+}
+#toast.error .toast-box {
+  border-color: rgba(255, 128, 128, 0.75);
+  box-shadow: 0 18px 50px rgba(255, 128, 128, 0.10);
+}
+
+/* Quick full-page background blink (e.g. access.mp3) */
+#bgBlink {
+  position: fixed;
+  inset: 0;
+  background: rgba(92, 46, 38, 0.75); /* earth-red */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 70ms linear;
+}
+#bgBlink.show { opacity: 1; }
+
+.debug-badge {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  background: rgba(22, 22, 22, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+
+.debug-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(22, 22, 22, 0.95);
+  text-decoration: none;
+}
+
+.debug-badge .mdi {
+  font-size: 15px;
+  line-height: 1;
+}
+
+</style>
+<script src="https://cart.easy.tools/login.js?type=block&id=b34df704-20c1-4adb-8aa9-b454428726ea"></script>
+
+<script>
+    !window._EC_HASH_10825c914cdc79311c67abfe0cce3019 && (location.href = "https://cart.easy.tools/r/b34df704-20c1-4adb-8aa9-b454428726ea");
+</script>
+
+<noscript>
+    <meta http-equiv="refresh" content="0;url=https://cart.easy.tools/r/b34df704-20c1-4adb-8aa9-b454428726ea">
+</noscript>
+</head>
+<body class="bg-zinc-950 mx-auto">
+<a href="/debug" target="_blank" class="debug-badge" title="Debug panel"><span class="mdi mdi-bug"></span>debug</a>
+
+<div id="toast" aria-live="polite" aria-atomic="true">
+    <div class="toast-box" id="toastText"></div>
+</div>
+
+<div id="bgBlink" aria-hidden="true"></div>
+
+<div class="hub-wrap flex flex-col justify-center items-center">
+    <img src="https://cdn.prod.website-files.com/69159c9d219de2cb7931c90f/6915aeaf82a97245e7ba31b6_nav-logo.svg" alt="AI_devs" class="hub-logo" />
+    <table id="score">
+        <tr>
+            <td>
+                <h1>Centrala AI Devs</h1>
+                <p>Wspólnie przeciwko siłom robotów.</p>
+            </td>
+            <td>Punkty</td>
+            <td><span id="points">0</span>/25</td>
+            <td>Sekrety</td>
+            <td><span id="secrets">0</span>/9</td>
+        </tr>
+        <tr>
+            <td colspan="5"><div class="score-row"><span class="score-label">Klucz:</span> <button type="button" id="apikeyCopy" class="apikey apikey-copy" title="Kliknij aby skopiować klucz API" aria-label="Kliknij aby skopiować klucz API">loading...</button></div></td>
+        </tr>
+                <tr>
+            <td colspan="5"><div class="score-row"><span class="score-label">AZYL:</span> <span id="azyluser" class="secret">brak</span><span id="azylResetWrap"></span></div></td>
+        </tr>
+            </table>
+
+<form action="/email" class="my-4 hidden form-danger" method="post">
+    <p>Podaj swojego maila</p>
+    <div class="form-row">
+    <input type="hidden" name="apikey" class="inputkey" value="" />
+    <input type="email" name="email" placeholder="twoj@adres" value="" autocomplete="on" minlength="6" required class="hub-input" />
+    <input class="hub-submit" type="submit" value="Zapisz" />
+    </div>
+</form>
+
+<form id="mainform" action="/answer" class="my-4" method="post">
+    <div class="form-row">
+    <input type="text" name="flag" placeholder="Znaleziona flaga" value="" autocomplete="on" maxlength="28" minlength="5" required autofocus class="hub-input" />
+    <input class="hub-submit" type="submit" value="Zgłoś" />
+    </div>
+    <p id="flagOut"></p>
+</form>
+</div>
+
+<div class="mission-wrap">
+<div id="missionStage" class="mission-stage">
+<table id="mission">
+<tr>
+        <td data-day="1" data-fog="0">&nbsp;</td>
+        <td data-day="2" data-fog="0">&nbsp;</td>
+        <td data-day="3" data-fog="0">&nbsp;</td>
+        <td data-day="4" data-fog="0">&nbsp;</td>
+        <td data-day="5" data-fog="0">&nbsp;</td>
+    </tr>
+<tr>
+        <td data-day="6" data-fog="0">&nbsp;</td>
+        <td data-day="7" data-fog="0">&nbsp;</td>
+        <td data-day="8" data-fog="0">&nbsp;</td>
+        <td data-day="9" data-fog="0">&nbsp;</td>
+        <td data-day="10" data-fog="0">&nbsp;</td>
+    </tr>
+<tr>
+        <td data-day="11" data-fog="0">&nbsp;</td>
+        <td data-day="12" data-fog="0">&nbsp;</td>
+        <td data-day="13" data-fog="0">&nbsp;</td>
+        <td data-day="14" data-fog="0">&nbsp;</td>
+        <td data-day="15" data-fog="1">&nbsp;</td>
+    </tr>
+<tr>
+        <td data-day="16" data-fog="1">&nbsp;</td>
+        <td data-day="17" data-fog="1">&nbsp;</td>
+        <td data-day="18" data-fog="1">&nbsp;</td>
+        <td data-day="19" data-fog="1">&nbsp;</td>
+        <td data-day="20" data-fog="1">&nbsp;</td>
+    </tr>
+<tr>
+        <td data-day="21" data-fog="1">&nbsp;</td>
+        <td data-day="22" data-fog="1">&nbsp;</td>
+        <td data-day="23" data-fog="1">&nbsp;</td>
+        <td data-day="24" data-fog="1">&nbsp;</td>
+        <td data-day="25" data-fog="1">&nbsp;</td>
+    </tr>
+</table>
+</div>
+</div>
+
+<div class="hub-wrap flex flex-col justify-center items-center">
+<h2>Sekrety</h2>
+<p class="mb-6 mt-2">Podczas swoich misji możesz napotkać wiele tajemnic, ale ich rozwikłanie nie jest konieczne do ocalenia świata.</p>
+<table id="secretsTable">
+<thead>
+<tr>
+    <th>Trop</th>
+    <th>Gdzie szukać</th>
+</tr>
+</thead>
+<tbody>
+<tr id="mst_dad4145404d1e5f6d0b18201c3713a76565a386a"><td class="sec-desc"><span class="sec-check"></span>Zepsuty Quick Response</td><td class="sec-loc"><span class="sec-pill">teczka</span></td></tr><tr id="mst_a1394ae98b5f932ae9bac673aeac1b69b5675fbf"><td class="sec-desc"><span class="sec-check"></span>Nie mogę się dodzwonić</td><td class="sec-loc"><span class="sec-pill">teczka</span></td></tr><tr id="mst_02a0ae38bf3c6b29b329f575d11e2ad7d33f914d"><td class="sec-desc"><span class="sec-check"></span>Maszerowałem przez labirynt</td><td class="sec-loc"><span class="sec-pill">teczka</span></td></tr><tr id="mst_4de34b0eb7dfeec8da42469d38bc853bb84ec1d8"><td class="sec-desc"><span class="sec-check"></span>Karty przeszły przez kod</td><td class="sec-loc"><span class="sec-pill">teczka</span></td></tr><tr id="mst_b36122c85d472ee9befef4d4f046e7dd81140668"><td class="sec-desc"><span class="sec-check"></span>Nasiona rzucone na żyzną glebę</td><td class="sec-loc"><span class="sec-pill">teczka</span></td></tr><tr id="mst_27831a35afdda018c2b8b7a259e4f040d802b1a9"><td class="sec-desc"><span class="sec-check"></span>Był anomalią i nie pasował do reszty</td><td class="sec-loc"><span class="sec-pill">S01E01</span></td></tr><tr id="mst_a1a9c2a0fdbdb64055f391a6e963894a7973b126"><td class="sec-desc"><span class="sec-check"></span>Gość na poziomie stworzył Wallyego i Waldo</td><td class="sec-loc"><span class="sec-pill">S01E02</span></td></tr><tr id="mst_f65c5f1e1c40006f30362e4907cc8abaf7c4818a"><td class="sec-desc"><span class="sec-check"></span>W pogodny dzień zadałem wprost pytanie</td><td class="sec-loc"><span class="sec-pill">S01E03</span></td></tr><tr id="mst_e3e40cca9f84f704b4666ecb833a4feb91bb27cd"><td class="sec-desc"><span class="sec-check"></span>Myśleli, że to usunęli, ale to zostało w mojej GŁOWIE</td><td class="sec-loc"><span class="sec-pill">S01E04</span></td></tr></tbody>
+</table>
+
+<p class="mt-3.5 pb-4">Pamiętaj, aby kontaktować się z innymi agentami za pomocą <a class="text-amber-400 underline hover:no-underline" href="https://bravecourses.circle.so/c/dyskusje-ogolne-ai4/" target="_blank">naszej platformy</a>.</p>
+
+<script>
+var trainingDay = 4;
+
+async function sha1Hex(input) {
+    const encoded = new TextEncoder().encode(String(input));
+    const digest = await crypto.subtle.digest('SHA-1', encoded);
+    return Array.from(new Uint8Array(digest)).map(function(b){
+        return b.toString(16).padStart(2, '0');
+    }).join('');
+}
+
+function getDeterministicFogImage(day) {
+    // Deterministic selector without rand(): stable index 1..4 for a given day id.
+    const index = ((Number(day) * 17) + 3) % 4 + 1;
+    return '/i/Mgla_' + String(index) + '.png';
+}
+
+function setMissionBackground(missionBgFromApi) {
+    const missionStage = document.getElementById('missionStage');
+    if (!missionStage) {
+        return;
+    }
+    const defaultBg = "/i/Desert.jpg?v=2026031218";
+    missionStage.style.backgroundImage = "url('" + defaultBg + "')";
+
+    if (typeof missionBgFromApi !== 'string') {
+        return;
+    }
+    // Allow only safe static paths from /i to avoid style/url injection.
+    if (/^\/i\/[A-Za-z0-9._-]+\.jpg\?v=\d{8}$/.test(missionBgFromApi)) {
+        missionStage.style.backgroundImage = "url('" + missionBgFromApi + "')";
+    }
+}
+
+async function renderMissionTiles(doneDays) {
+    const completed = new Set((Array.isArray(doneDays) ? doneDays : []).map(function(day){
+        return Number(day);
+    }));
+    const cells = document.querySelectorAll('#mission td[data-day]');
+    const updates = [];
+
+    var visibleDays = new Set();
+    for (var d = 1; d <= Math.min(trainingDay + 1, 25); d++) {
+        visibleDays.add(d);
+    }
+
+    cells.forEach(function(cell){
+        const day = Number(cell.dataset.day);
+        if (!Number.isInteger(day) || day < 1 || day > 25) {
+            return;
+        }
+        if (!visibleDays.has(day)) {
+            cell.style.backgroundImage = "url('" + getDeterministicFogImage(day) + "')";
+            return;
+        }
+        const done = completed.has(day);
+        const state = done ? 'complete' : 'uncomplete';
+        if (day === trainingDay + 1) {
+            cell.style.filter = 'opacity(0.5) brightness(0.5)';
+        }
+        updates.push(
+            sha1Hex(String(day) + state).then(function(hash){
+                cell.style.backgroundImage = "url('/map/" + hash + "')";
+                if (done && !cell.querySelector('.day-check')) {
+                    var mark = document.createElement('span');
+                    mark.className = 'day-check';
+                    mark.textContent = '\u2714';
+                    cell.appendChild(mark);
+                }
+            })
+        );
+    });
+
+    await Promise.all(updates);
+}
+
+function updateStats(){
+fetch('/stats', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: new URLSearchParams({
+    key: window._EC_USER_UUID,
+  }),
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+        window.localStorage['mykey'] = data.key;
+        window.azylUser = typeof data.azyluser === 'string' ? data.azyluser.trim() : '';
+        document.getElementById('points').textContent = data.points;
+        document.getElementById('secrets').textContent = data.secrets;
+        document.querySelectorAll('.apikey').forEach(function(trg){
+            trg.textContent = data.key;
+        });
+        const azylUserElement = document.getElementById('azyluser');
+        const azylResetWrapElement = document.getElementById('azylResetWrap');
+        if (azylUserElement && azylResetWrapElement && data.azyl.length > 10){
+            azylUserElement.textContent = data.azyl;
+            azylResetWrapElement.innerHTML = '<a href="/reset_azyl.php?apikey='+data.key+'" target="_blank" id="reset_azyl">reset hasła</a>';
+            document.getElementById('reset_azyl').addEventListener('click',function(e){
+                whatToDo = confirm("Czy naprawdę chcesz zmienić hasło do serwera AZYL?");
+                if (!whatToDo){
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        }
+        document.querySelectorAll('.inputkey').forEach(function(trg){
+            trg.value = data.key;
+        });
+        setMissionBackground(data.mission_bg);
+        if (data.points == 25){
+            document.getElementById('score').classList.add('awesome');
+            if (data.flag!=''){
+                document.querySelector('body h2').textContent = data.flag;
+                document.querySelector('body h2').classList.add('text-4xl');
+                document.querySelector('body h2').classList.add('secretflag');
+                document.querySelector('body h2').classList.add('animate-pulse');
+            }
+            for (let i = 0; i < 5; i++) {
+              setTimeout(() => {
+                jsConfetti.addConfetti({
+                  confettiNumber: 1000,
+                });
+              }, i * 1000);
+            }
+        }
+        renderMissionTiles(data.days).catch(function(error){
+            console.log('Mission tile render failed:', error);
+        });
+        if (data.email==''){
+            console.log('Brak adresu email');
+            document.querySelector('form[action="/email"]').classList.remove('hidden');
+        }
+        data.mysteries.forEach(function(mysteryID){
+            item = document.getElementById('mst_'+mysteryID);
+            if (item){
+                item.classList.add('secret-found');
+            }
+        });
+  })
+  .catch(error => {
+    console.log('There was a problem with the fetch operation:', error);
+  });
+  return true;
+}
+
+updateStats();
+formIsActive = true;
+jsConfetti = new JSConfetti();
+window.azylUser = '';
+
+let toastTimeout = null;
+
+function showToast(message, isError = false) {
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) {
+        return;
+    }
+    toastText.textContent = message;
+    toast.classList.toggle('error', isError);
+    toast.classList.add('show');
+    if (toastTimeout) {
+        clearTimeout(toastTimeout);
+    }
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 1800);
+}
+
+function blinkBackgroundTwice() {
+    const el = document.getElementById('bgBlink');
+    if (!el) return;
+    el.classList.remove('show');
+    // Two quick blinks; always ends in original state (no overlay)
+    setTimeout(() => el.classList.add('show'), 0);
+    setTimeout(() => el.classList.remove('show'), 90);
+    setTimeout(() => el.classList.add('show'), 180);
+    setTimeout(() => el.classList.remove('show'), 270);
+}
+
+async function copyTextToClipboard(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        await navigator.clipboard.writeText(text);
+        return true;
+    }
+    // Fallback for older browsers / permissions issues
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (!ok) {
+        throw new Error('copy_failed');
+    }
+    return true;
+}
+
+const apikeyCopyBtn = document.getElementById('apikeyCopy');
+if (apikeyCopyBtn) {
+    apikeyCopyBtn.addEventListener('click', async function () {
+        const key = String(window.localStorage['mykey'] || apikeyCopyBtn.textContent || '').trim();
+        if (!key || key === 'loading...') {
+            showToast('Brak klucza do skopiowania', true);
+            return;
+        }
+        try {
+            await copyTextToClipboard(key);
+            showToast('Skopiowano');
+        } catch (e) {
+            showToast('Nie udało się skopiować', true);
+        }
+    });
+}
+
+const azylUserBox = document.getElementById('azyluser');
+if (azylUserBox) {
+    azylUserBox.addEventListener('click', async function (event) {
+        if (event.target && event.target.closest('#reset_azyl')) {
+            return;
+        }
+        // Prevent other click handlers (e.g. glitch-reveal) from overriding clipboard content.
+        event.stopImmediatePropagation();
+
+        const azylUser = (typeof window.azylUser === 'string') ? window.azylUser.trim() : '';
+        if (!azylUser) {
+            return;
+        }
+
+        try {
+            await copyTextToClipboard('ssh ' + azylUser + '@azyl.ag3nts.org -p 5022');
+            showToast('Skopiowano');
+        } catch (e) {
+            showToast('Nie udało się skopiować', true);
+        }
+    });
+}
+
+document.getElementById('mainform').addEventListener('submit',function(e){
+    if (!formIsActive){
+        return false;
+    }
+    fetch('/answer', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        key: window.localStorage['mykey'],
+        flag: document.querySelector('input[name="flag"]').value,
+      }),
+    })
+      .then(async (response) => {
+        // Zawsze próbuj odczytać odpowiedź i pokazać komunikat, nawet gdy HTTP != 2xx (np. 429).
+        const raw = await response.text();
+        let data = null;
+        try {
+            data = JSON.parse(raw);
+        } catch (e) {
+            data = {
+                code: -1,
+                message: `HTTP ${response.status}. Invalid JSON response.`,
+            };
+        }
+        if (!data || typeof data !== 'object') {
+            data = {
+                code: -1,
+                message: `HTTP ${response.status}. Invalid response.`,
+            };
+        }
+        if (typeof data.message !== 'string') {
+            data.message = `HTTP ${response.status}.`;
+        }
+        if (typeof data.code !== 'number') {
+            data.code = -1;
+        }
+        data.http = response.status;
+        return data;
+      })
+      .then(data => {
+            flgHandle = document.querySelector('#flagOut');
+            if (data.message.indexOf('%')!==-1){
+                srcX = data.message.match(/%([^%]+)%/)[1];
+                if (srcX.indexOf('.js')!==-1){
+                    var script = document.createElement('script');
+                    script.src = srcX;
+                    document.getElementById('player').appendChild(script);
+                    data.message = data.message.replace(/%[^%]*%/g, '');
+                }
+            }
+            flgHandle.innerHTML = data.message;
+            errorColor = data.code == 0 ? 'text-green-500' : 'text-red-500';
+            flgHandle.className = 'my-2 '+errorColor;
+            if (data.code==0){
+                jsConfetti.addConfetti();
+                const isSecretFlag = /zapisany/i.test(String(data.message || ''));
+                const successAudioPath = isSecretFlag ? '/i/aha_secret.mp3' : '/i/complete.mp3';
+                complete_audio = new Audio(successAudioPath);
+                complete_audio.play()
+                  .then(() => console.log('Dźwięk jest odtwarzany'))
+                  .catch(error => console.error('Błąd odtwarzania:', error));
+            } else if (data.code==-1004) {
+              // nic nie robimy - to powtórzona flaga
+            } else {
+                blinkBackgroundTwice();
+                dave_audio = new Audio('/i/access.mp3');
+                dave_audio.play()
+                  .then(() => console.log('Dźwięk jest odtwarzany'))
+                  .catch(error => console.error('Błąd odtwarzania:', error));
+            }
+            document.querySelector('input[name="flag"]').value = '';
+            updateStats();
+      })
+      .catch(error => {
+        console.log('There was a problem with the fetch operation:', error);
+      });
+    e.preventDefault();
+});
+</script>
+</div>
+<div id="player" style="display: none;"></div>
+<!-- Glitch-reveal effect for sensitive fields. Remove this line to disable. -->
+<script src="/i/glitch-reveal.js?v=10"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4ef24304510d413eb950bcd2d4453a7a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
