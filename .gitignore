@@ -46,3 +46,13 @@ build/
 target/
 .tmp/
 tmp/
+
+# Local automation artifacts
+playwright-report/
+test-results/
+.playwright/
+*.trace
+*.har
+
+# Local one-off renders and review exports
+rendered/
