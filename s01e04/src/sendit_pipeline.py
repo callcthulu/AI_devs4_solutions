@@ -19,6 +19,7 @@ from urllib.request import Request, urlopen
 BASE_URL = "https://hub.ag3nts.org/dane/doc/"
 DEFAULT_MODEL = "gemini-2.5-flash"
 VERIFY_URL = "https://hub.ag3nts.org/verify"
+LOCAL_SECRETS_FILENAME = "local.secrets.json"
 
 
 @dataclass
@@ -50,6 +51,15 @@ class SolvedDeclaration:
     amount_pp: int
     declaration: str
     reasoning: dict
+
+
+def load_local_secrets(start_dir: Path) -> dict:
+    current = start_dir.resolve()
+    for candidate_dir in [current, *current.parents]:
+        candidate = candidate_dir / LOCAL_SECRETS_FILENAME
+        if candidate.exists():
+            return json.loads(candidate.read_text(encoding="utf-8"))
+    return {}
 
 
 def http_get_text(url: str) -> str:
@@ -208,6 +218,9 @@ def load_shipment_input(workdir: Path) -> ShipmentInput:
     if not input_path.exists():
         raise FileNotFoundError(f"Missing input file: {input_path}")
     data = json.loads(input_path.read_text(encoding="utf-8"))
+    secrets = load_local_secrets(workdir)
+    if not data.get("task_api_key") or data["task_api_key"].startswith("YOUR_"):
+        data["task_api_key"] = secrets.get("s01e04_task_api_key", "")
     return ShipmentInput(**data)
 
 
@@ -368,13 +381,15 @@ def main() -> int:
     cache_dir = workdir / "cache"
     assets_dir = workdir / "assets"
     output_dir = workdir / "output"
+    local_secrets = load_local_secrets(workdir)
 
     if args.command == "download":
         download_docs(cache_dir, assets_dir)
         return 0
 
     if args.command == "analyze-images":
-        if not args.gemini_api_key:
+        gemini_api_key = args.gemini_api_key or local_secrets.get("gemini_api_key", "")
+        if not gemini_api_key:
             print("Missing Gemini API key.", file=sys.stderr)
             return 2
         manifest = json.loads((cache_dir / "manifest.json").read_text(encoding="utf-8"))
@@ -382,7 +397,7 @@ def main() -> int:
             DownloadedFile(item["name"], item["url"], item["kind"], Path(item["path"]))
             for item in manifest
         ]
-        analyze_images(downloaded, output_dir, api_key=args.gemini_api_key, model=args.gemini_model)
+        analyze_images(downloaded, output_dir, api_key=gemini_api_key, model=args.gemini_model)
         return 0
 
     if args.command == "solve":

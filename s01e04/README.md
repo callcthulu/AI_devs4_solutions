@@ -31,6 +31,7 @@ To rozwiązanie jest przygotowane jako mały, powtarzalny pipeline do zadania `s
 ## Jak uruchomić ponownie
 
 1. Uzupełnij `input.json`.
+   Placeholder `task_api_key` może zostać nadpisany przez `AI_devs4_solutions/local.secrets.json`.
 2. Pobierz dokumentację:
 
 ```powershell
@@ -65,3 +66,12 @@ python .\src\sendit_pipeline.py verify --workdir .
 ## Ostatni poprawny wynik
 
 - `output/verify_response.json` zawiera odpowiedź huba dla poprawnego zgłoszenia.
+
+## Sekrety lokalne
+
+- Prawdziwe klucze trzymaj w `AI_devs4_solutions/local.secrets.json`
+- Repo zawiera tylko `local.secrets.json.example`
+- Obsługiwane pola:
+  - `ag3nts_api_key`
+  - `gemini_api_key`
+  - `s01e04_task_api_key`

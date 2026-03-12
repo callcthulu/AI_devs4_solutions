@@ -32,12 +32,17 @@ Response:
 PowerShell:
 
 ```powershell
-$env:GEMINI_API_KEY="YOUR_KEY"
+$env:GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
 $env:GEMINI_MODEL="gemini-2.5-flash"
-$env:AG3NTS_API_KEY="713ca030-9356-49f7-97c8-980521fe781d"
+$env:AG3NTS_API_KEY="YOUR_AG3NTS_API_KEY"
 $env:PORT="3000"
 node server.js
 ```
+
+Alternative:
+
+- put real keys in `AI_devs4_solutions/local.secrets.json`
+- keep only placeholders in repo files
 
 ## Azyl deploy
 
@@ -114,7 +119,7 @@ Example verify call:
 @'
 import json, urllib.request
 payload = json.dumps({
-  "apikey": "713ca030-9356-49f7-97c8-980521fe781d",
+  "apikey": "YOUR_AG3NTS_API_KEY",
   "task": "proxy",
   "answer": {
     "url": "https://azyl-31341.ag3nts.org/",

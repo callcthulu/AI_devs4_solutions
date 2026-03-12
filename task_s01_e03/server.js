@@ -5,11 +5,28 @@ import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const REPO_ROOT = path.resolve(__dirname, "..");
+const LOCAL_SECRETS_PATH = path.join(REPO_ROOT, "local.secrets.json");
+
+async function loadLocalSecrets() {
+  try {
+    const raw = await readFile(LOCAL_SECRETS_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return {};
+    }
+    throw error;
+  }
+}
+
+const LOCAL_SECRETS = await loadLocalSecrets();
 
 const PORT = Number(process.env.PORT || 3000);
 const AG3NTS_API_KEY =
-  process.env.AG3NTS_API_KEY || "713ca030-9356-49f7-97c8-980521fe781d";
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
+  process.env.AG3NTS_API_KEY || LOCAL_SECRETS.ag3nts_api_key || "";
+const GEMINI_API_KEY =
+  process.env.GEMINI_API_KEY || LOCAL_SECRETS.gemini_api_key || "";
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 const PACKAGE_API_URL = "https://hub.ag3nts.org/api/packages";
@@ -90,6 +107,14 @@ Zasady operacyjne:
 `.trim();
 
 await mkdir(SESSIONS_DIR, { recursive: true });
+
+if (!AG3NTS_API_KEY) {
+  throw new Error("Missing AG3NTS_API_KEY. Set env var or local.secrets.json.");
+}
+
+if (!GEMINI_API_KEY) {
+  throw new Error("Missing GEMINI_API_KEY. Set env var or local.secrets.json.");
+}
 
 function jsonResponse(res, statusCode, payload) {
   res.writeHead(statusCode, { "Content-Type": "application/json; charset=utf-8" });

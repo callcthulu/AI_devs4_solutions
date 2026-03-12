@@ -18,6 +18,7 @@ logs/
 .env
 .env.*
 !.env.example
+local.secrets.json
 
 # Python
 __pycache__/
